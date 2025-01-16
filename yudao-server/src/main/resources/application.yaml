@@ -30,7 +30,7 @@ spring:
       time-to-live: 1h # 设置过期时间为 1 小时
 
 server:
-  port: 80
+  port: ${PORT:80} # Use environment variable PORT or default to 80
   servlet:
     encoding:
       enabled: true
