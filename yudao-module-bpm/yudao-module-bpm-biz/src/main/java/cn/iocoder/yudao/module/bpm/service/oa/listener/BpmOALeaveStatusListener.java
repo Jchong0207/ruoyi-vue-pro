@@ -26,6 +26,9 @@ public class BpmOALeaveStatusListener extends BpmProcessInstanceStatusEventListe
 
     @Override
     protected void onEvent(BpmProcessInstanceStatusEvent event) {
+        if (event.getBusinessKey() == null) {
+            return;
+        }
         leaveService.updateLeaveStatus(Long.parseLong(event.getBusinessKey()), event.getStatus());
     }
 
