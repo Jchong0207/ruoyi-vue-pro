@@ -43,21 +43,27 @@ spring:
       primary: master
       datasource:
         master:
-          url: jdbc:mysql://127.0.0.1:3306/ruoyi-vue-pro?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true&rewriteBatchedStatements=true # MySQL Connector/J 8.X 连接的示例
-          username: root
-          password: 123456
+#          url: jdbc:mysql://172.18.51.1:51968/yudao?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true&rewriteBatchedStatements=true # MySQL Connector/J 8.X 连接的示例
+#          username: yudao
+#          password: "%%##dsfesS"
+          url: jdbc:sqlserver://ruoyi-vue-pro-server.database.windows.net:1433;database=ruoyi-vue-pro
+          username: "rodyfurniture"
+          password: "@Tyc200216"
         slave: # 模拟从库，可根据自己需要修改 # 模拟从库，可根据自己需要修改
           lazy: true # 开启懒加载，保证启动速度
-          url: jdbc:mysql://127.0.0.1:3306/ruoyi-vue-pro?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true&rewriteBatchedStatements=true # MySQL Connector/J 8.X 连接的示例
-          username: root
-          password: 123456
+#          url: jdbc:mysql://172.18.51.1:51968/yudao?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true&rewriteBatchedStatements=true # MySQL Connector/J 8.X 连接的示例
+#          username: yudao
+#          password: "%%##dsfesS"
+          url: jdbc:sqlserver://ruoyi-vue-pro-server.database.windows.net:1433;database=ruoyi-vue-pro
+          username: "rodyfurniture"
+          password: "@Tyc200216"
 
   # Redis 配置。Redisson 默认的配置足够使用，一般不需要进行调优
   redis:
-    host: 400-infra.server.iocoder.cn # 地址
-    port: 6379 # 端口
-    database: 1 # 数据库索引
-#    password: 123456 # 密码，建议生产环境开启
+    host: 172.16.112.37 # 地址
+    port: 16381 # 端口
+    database: 42 # 数据库索引
+    password: msyc%*cdonMnq123 # 密码，建议生产环境开启
 
 --- #################### 定时任务相关配置 ####################
 
@@ -198,21 +204,3 @@ justauth:
     prefix: 'social_auth_state:' # 缓存前缀，目前只对 Redis 缓存生效，默认 JUSTAUTH::STATE::
     timeout: 24h # 超时时长，目前只对 Redis 缓存生效，默认 3 分钟
 
-
---- #################### iot相关配置 TODO 芋艿：再瞅瞅 ####################
-iot:
-  emq:
-    # 账号
-    username: anhaohao
-    # 密码
-    password: ahh@123456
-    # 主机地址
-    hostUrl: tcp://chaojiniu.top:1883
-    # 客户端Id，不能相同，采用随机数 ${random.value}
-    client-id: ${random.int}
-    # 默认主题
-    default-topic: test
-    # 保持连接
-    keepalive: 60
-    # 清除会话(设置为false,断开连接，重连后使用原来的会话 保留订阅的主题，能接收离线期间的消息)
-    clearSession: true
