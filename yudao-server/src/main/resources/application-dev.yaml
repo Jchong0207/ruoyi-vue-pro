@@ -46,7 +46,7 @@ spring:
 #          url: jdbc:mysql://172.18.51.1:51968/yudao?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true&rewriteBatchedStatements=true # MySQL Connector/J 8.X 连接的示例
 #          username: yudao
 #          password: "%%##dsfesS"
-          url: jdbc:sqlserver://ruoyi-vue-pro-server.database.windows.net:1433;database=ruoyi-vue-pro
+          url: jdbc:mysql://ruoyi-vue-pro.mysql.database.azure.com:3306/ruoyi-vue-pro
           username: "rodyfurniture"
           password: "@Tyc200216"
         slave: # 模拟从库，可根据自己需要修改 # 模拟从库，可根据自己需要修改
@@ -54,16 +54,17 @@ spring:
 #          url: jdbc:mysql://172.18.51.1:51968/yudao?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true&rewriteBatchedStatements=true # MySQL Connector/J 8.X 连接的示例
 #          username: yudao
 #          password: "%%##dsfesS"
-          url: jdbc:sqlserver://ruoyi-vue-pro-server.database.windows.net:1433;database=ruoyi-vue-pro
+          url: jdbc:mysql://ruoyi-vue-pro.mysql.database.azure.com:3306/ruoyi-vue-pro
           username: "rodyfurniture"
           password: "@Tyc200216"
 
   # Redis 配置。Redisson 默认的配置足够使用，一般不需要进行调优
   redis:
-    host: 172.16.112.37 # 地址
-    port: 16381 # 端口
+    host: ruoyi-vue-pro.redis.cache.windows.net # 地址
+    port: 6380 # 端口
     database: 42 # 数据库索引
-    password: msyc%*cdonMnq123 # 密码，建议生产环境开启
+    ssl: true
+    # password: dQn4tIY8EA9WnyZLBxEORNmzlEB2ACTvnAzCaI41kyM= # 密码，建议生产环境开启
 
 --- #################### 定时任务相关配置 ####################
 
