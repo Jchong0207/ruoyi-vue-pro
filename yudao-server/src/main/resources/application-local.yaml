@@ -46,7 +46,7 @@ spring:
       primary: master
       datasource:
         master:
-          url: jdbc:mysql://ruoyi-vue-pro.mysql.database.azure.com:3306/ruoyi-vue-pro
+          url: jdbc:mysql://147.93.103.131:3307/
           #          url: jdbc:mysql://127.0.0.1:3306/ruoyi-vue-pro?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true&rewriteBatchedStatements=true # MySQL Connector/J 8.X 连接的示例
           #          url: jdbc:mysql://127.0.0.1:3306/ruoyi-vue-pro?useSSL=true&allowPublicKeyRetrieval=true&useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&rewriteBatchedStatements=true # MySQL Connector/J 5.X 连接的示例
           #          url: jdbc:postgresql://127.0.0.1:5432/ruoyi-vue-pro # PostgreSQL 连接的示例
@@ -65,15 +65,14 @@ spring:
           #          password: Yudao@2024 # OpenGauss 连接的示例
         slave: # 模拟从库，可根据自己需要修改
           lazy: true # 开启懒加载，保证启动速度
-          url: jdbc:mysql://ruoyi-vue-pro.mysql.database.azure.com:3306/ruoyi-vue-pro
+          url: jdbc:mysql://147.93.103.131:3307/
           username: "rodyfurniture"
           password: "@Tyc200216"
 
   # Redis 配置。Redisson 默认的配置足够使用，一般不需要进行调优
   redis:
-    host: ruoyi-vue-pro.redis.cache.windows.net # 地址
+    host: 147.93.103.131 # 地址
     port: 6380 # 端口
-    database: 0 # 数据库索引
     ssl: true
     # password: dQn4tIY8EA9WnyZLBxEORNmzlEB2ACTvnAzCaI41kyM= # 密码，建议生产环境开启
 
