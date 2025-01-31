@@ -30,7 +30,7 @@ spring:
       time-to-live: 1h # 设置过期时间为 1 小时
 
   redis:
-    host: ruoyi-vue-pro.redis.cache.windows.net # 地址
+    host: 147.93.103.131 # 地址
     port: 6380 # 端口
     ssl: true
     # password: 5jaDgbXjTwOA4yrbn2qjEzEPXwid09UNDAzCaN3swWg=
