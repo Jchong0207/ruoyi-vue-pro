@@ -29,6 +29,17 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
+      - name: Set up Maven
+        uses: actions/setup-java@v2
+        with:
+          maven-version: '3.9.9'  # Replace with your local version
+
+      # Build the project with Maven and skip tests
+      - name: Build the project
+        run: |
+          cd yudao-server
+          mvn clean install package -DskipTests
+
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
