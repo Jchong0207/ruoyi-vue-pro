@@ -2,9 +2,6 @@
 ## 感谢复旦核博士的建议！灰子哥，牛皮！
 FROM eclipse-temurin:8-jre
 
-# Build the project (skip tests)
-RUN mvn clean install -DskipTests
-
 ## 创建目录，并使用它作为工作目录
 RUN mkdir -p /yudao-server
 WORKDIR /yudao-server
