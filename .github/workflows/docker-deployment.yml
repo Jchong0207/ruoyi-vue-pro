@@ -44,3 +44,15 @@ jobs:
 
       - name: Verify the built image
         run: docker manifest inspect ngjingchong/api-server:amd64
+
+      - name: Deploy to Hostinger VPS
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          password: ${{ secrets.VPS_PASSWORD }}
+          script: |
+            docker pull ngjingchong/api-server:amd64
+            docker stop api-server || true
+            docker rm api-server || true
+            docker run -d -p 48080:48080 --name api-server ngjingchong/api-server:amd64

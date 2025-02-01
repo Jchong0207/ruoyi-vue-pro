@@ -32,7 +32,7 @@ spring:
   redis:
     host: 147.93.103.131 # 地址
     port: 6380 # 端口
-    ssl: true
+#    ssl: true
     # password: 5jaDgbXjTwOA4yrbn2qjEzEPXwid09UNDAzCaN3swWg=
 
 server:

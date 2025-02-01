@@ -62,7 +62,7 @@ spring:
   redis:
     host: 147.93.103.131 # 地址
     port: 6380 # 端口
-    ssl: true
+#    ssl: true
     # password: dQn4tIY8EA9WnyZLBxEORNmzlEB2ACTvnAzCaI41kyM= # 密码，建议生产环境开启
 
 --- #################### 定时任务相关配置 ####################
