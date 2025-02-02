@@ -61,4 +61,5 @@ jobs:
             docker pull ngjingchong/api-server:amd64
             docker stop api-server || true
             docker rm api-server || true
-            docker run -d 48080:48080 --name api-server ngjingchong/api-server:amd64
+            docker rmi $(docker images -f "dangling=true" -q) || true
+            docker run -d -p 48080:48080 --name api-server ngjingchong/api-server:amd64
