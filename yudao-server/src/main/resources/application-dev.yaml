@@ -46,7 +46,7 @@ spring:
 #          url: jdbc:mysql://172.18.51.1:51968/yudao?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true&rewriteBatchedStatements=true # MySQL Connector/J 8.X 连接的示例
 #          username: yudao
 #          password: "%%##dsfesS"
-          url: jdbc:mysql://147.93.103.131:3307/
+          url: jdbc:mysql://147.93.103.131:3307/ruoyi-vue-pro
           username: "rodyfurniture"
           password: "@Tyc200216"
         slave: # 模拟从库，可根据自己需要修改 # 模拟从库，可根据自己需要修改
@@ -54,7 +54,7 @@ spring:
 #          url: jdbc:mysql://172.18.51.1:51968/yudao?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true&rewriteBatchedStatements=true # MySQL Connector/J 8.X 连接的示例
 #          username: yudao
 #          password: "%%##dsfesS"
-          url: jdbc:mysql://147.93.103.131:3307/
+          url: jdbc:mysql://147.93.103.131:3307/ruoyi-vue-pro
           username: "rodyfurniture"
           password: "@Tyc200216"
 
