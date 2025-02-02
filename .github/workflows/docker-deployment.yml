@@ -34,12 +34,6 @@ jobs:
         run: |
           mvn clean install package -DskipTests
 
-      - name: Rename JAR File
-        run: mv target/yudao-server-*.jar.original target/yudao-server.jar || true
-
-      - name: Verify JAR File
-        run: ls -lh ./yudao-server/target/yudao-server.jar || { echo "JAR file missing!"; exit 1; }
-
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:

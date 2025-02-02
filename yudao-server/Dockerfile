@@ -6,7 +6,8 @@ FROM eclipse-temurin:8-jre
 RUN mkdir -p /yudao-server
 WORKDIR /yudao-server
 ## 将后端项目的 Jar 文件，复制到镜像中
-COPY ./target/yudao-server.jar app.jar
+COPY ./yudao-server/target/yudao-server.jar app.jar
+
 
 ## 设置 TZ 时区
 ENV TZ=Asia/Shanghai
