@@ -17,6 +17,12 @@ ENV JAVA_OPTS="-Xms512m -Xmx512m -Djava.security.egd=file:/dev/./urandom"
 ## 应用参数
 ENV ARGS=""
 
+# Use a lightweight web server to serve the built Vue app
+FROM nginx:latest
+
+# Install nano in the Nginx container
+RUN apt update && apt install -y certbot nano && rm -rf /var/lib/apt/lists/*
+
 ## 暴露后端项目的 48080 端口
 EXPOSE 48080
 
