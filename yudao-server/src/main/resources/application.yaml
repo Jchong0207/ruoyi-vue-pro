@@ -37,11 +37,6 @@ spring:
 
 server:
   port: ${PORT:443} # Use environment variable PORT or default to 80
-  ssl:
-    key-store: /etc/nginx/ssl/keystore.p12
-    key-store-password: api-server
-    key-store-type: PKCS12
-    key-alias: api-server
   servlet:
     encoding:
       enabled: true
