@@ -31,7 +31,7 @@ import static cn.iocoder.yudao.framework.apilog.core.enums.OperateTypeEnum.EXPOR
 import static cn.iocoder.yudao.framework.common.pojo.CommonResult.success;
 
 
-@CrossOrigin(origins = {"https://rodybuys.com", "https://www.rodybuys.com"})
+@CrossOrigin(origins = {"https://rodybuys.com", "https://www.rodybuys.com"}, allowCredentials = "true")
 @Tag(name = "管理后台 - 字典数据")
 @RestController
 @RequestMapping("/system/dict-data")
