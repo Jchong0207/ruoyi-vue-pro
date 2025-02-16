@@ -1,6 +1,6 @@
 ## AdoptOpenJDK 停止发布 OpenJDK 二进制，而 Eclipse Temurin 是它的延伸，提供更好的稳定性
 ## 感谢复旦核博士的建议！灰子哥，牛皮！
-FROM eclipse-temurin:8-jre
+FROM eclipse-temurin:8-jre AS api-server
 
 ## 创建目录，并使用它作为工作目录
 RUN mkdir -p /yudao-server
@@ -20,3 +20,20 @@ EXPOSE 48080
 
 ## 启动后端项目
 CMD java ${JAVA_OPTS} -jar app.jar $ARGS
+
+# -------------------------------------------------------------------
+
+## Use official Nginx image
+FROM nginx:latest
+
+## Remove default Nginx config
+RUN rm /etc/nginx/conf.d/default.conf
+
+# Install nano in the Nginx container
+RUN apt update && apt install -y certbot nano && rm -rf /var/lib/apt/lists/*
+
+## Expose Nginx port
+EXPOSE 80
+
+## Start Nginx
+CMD ["nginx", "-g", "daemon off;"]
