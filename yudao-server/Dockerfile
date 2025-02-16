@@ -21,19 +21,3 @@ EXPOSE 48080
 ## 启动后端项目
 CMD java ${JAVA_OPTS} -jar app.jar $ARGS
 
-# -------------------------------------------------------------------
-
-## Use official Nginx image
-FROM nginx:latest
-
-## Remove default Nginx config
-RUN rm /etc/nginx/conf.d/default.conf
-
-# Install nano in the Nginx container
-RUN apt update && apt install -y certbot nano && rm -rf /var/lib/apt/lists/*
-
-## Expose Nginx port
-EXPOSE 80
-
-## Start Nginx
-CMD ["nginx", "-g", "daemon off;"]
