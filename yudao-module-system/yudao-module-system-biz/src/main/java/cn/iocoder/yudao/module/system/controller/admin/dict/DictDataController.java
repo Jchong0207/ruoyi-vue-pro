@@ -19,6 +19,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
@@ -29,6 +30,8 @@ import java.util.List;
 import static cn.iocoder.yudao.framework.apilog.core.enums.OperateTypeEnum.EXPORT;
 import static cn.iocoder.yudao.framework.common.pojo.CommonResult.success;
 
+
+@CrossOrigin(origins = {"https://rodybuys.com", "https://www.rodybuys.com"})
 @Tag(name = "管理后台 - 字典数据")
 @RestController
 @RequestMapping("/system/dict-data")
