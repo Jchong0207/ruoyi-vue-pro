@@ -3,6 +3,7 @@ package cn.iocoder.yudao.server.controller;
 import cn.iocoder.yudao.framework.common.pojo.CommonResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import static cn.iocoder.yudao.framework.common.exception.enums.GlobalErrorCodeConstants.NOT_IMPLEMENTED;
 
@@ -12,6 +13,7 @@ import static cn.iocoder.yudao.framework.common.exception.enums.GlobalErrorCodeC
  *
  * @author 芋道源码
  */
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 public class DefaultController {
 
