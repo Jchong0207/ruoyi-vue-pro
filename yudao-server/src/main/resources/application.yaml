@@ -36,7 +36,7 @@ spring:
     # password: 5jaDgbXjTwOA4yrbn2qjEzEPXwid09UNDAzCaN3swWg=
 
 server:
-  port: ${PORT:443} # Use environment variable PORT or default to 80
+  port: ${PORT:80} # Use environment variable PORT or default to 80
   servlet:
     encoding:
       enabled: true
